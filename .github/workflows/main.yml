@@ -1,0 +1,17 @@
+name: Lab
+on: push
+jobs:
+    build-project:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            
+            
+
+            - name: build
+              run: |
+                rm -rf build
+                mkdir build && cd build
+                cmake ..
+                cmake --build .
